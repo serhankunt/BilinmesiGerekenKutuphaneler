@@ -4,46 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SOLID.OCPGood
+namespace SOLID.OCPGood2
 {
-    public interface ISalaryCalculate
-    {
-        decimal Calculate(decimal salary);
-    }
-    public class LowSalaryCalculate : ISalaryCalculate
+    
+    public class LowSalaryCalculate
     {
         public decimal Calculate(decimal salary)
         {
             return salary * 2;
         }
     }
-    public class MiddleSalaryCalculate : ISalaryCalculate
+    public class MiddleSalaryCalculate 
     {
         public decimal Calculate(decimal salary)
         {
             return salary * 4;
         }
     }
-    public class HighSalaryCalculate : ISalaryCalculate
+    public class HighSalaryCalculate 
     {
         public decimal Calculate(decimal salary)
         {
             return salary * 6;
         }
     }
-    public class ManagerSalaryCalculate : ISalaryCalculate{
+    public class ManagerSalaryCalculate
+    {
         public decimal Calculate(decimal salary)
         {
             return salary * 10;
         }
-
     }
-
     public class SalaryCalculator
     {
-        public decimal Calculate(decimal salary, ISalaryCalculate salaryCalculate)
+        //Action => void
+        //Predicate => bool
+        //Function
+        public decimal Calculate(decimal salary,Func<decimal,decimal> calculateDelegate)
         {
-            return salaryCalculate.Calculate(salary);
+            return calculateDelegate(salary);
         }
     }
 }
