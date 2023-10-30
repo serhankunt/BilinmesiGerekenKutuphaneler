@@ -21,3 +21,9 @@ Console.WriteLine($"Low Salary: {salaryCalculator.Calculate(1000, new LowSalaryC
 Console.WriteLine($"Middle Salary: {salaryCalculator.Calculate(1000, new MiddleSalaryCalculate().Calculate)}");
 Console.WriteLine($"High Salary: {salaryCalculator.Calculate(1000, new HighSalaryCalculate().Calculate)}");
 Console.WriteLine($"Manager Salary: {salaryCalculator.Calculate(1000, new ManagerSalaryCalculate().Calculate)}");
+
+Console.WriteLine($"Customer Salary: {salaryCalculator.Calculate(1000,x=> 
+{
+    return x * 10;
+})}");
+
