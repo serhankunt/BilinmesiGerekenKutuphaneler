@@ -13,13 +13,13 @@ namespace SOLID.LSPBad
         {
             Console.WriteLine("Arama yapıldı");
         }
-        public abstract void TakePhone();
+        public abstract void TakePhoto();
 
     }
 
     public class Iphone : BasePhone
     {
-        public override void TakePhone()
+        public override void TakePhoto()
         {
             Console.WriteLine("Fotoğraf çekildi");
         }
@@ -27,7 +27,7 @@ namespace SOLID.LSPBad
 
     public class Nokia3310 : BasePhone
     {
-        public override void TakePhone()
+        public override void TakePhoto()
         {
             throw new NotImplementedException();
         }
